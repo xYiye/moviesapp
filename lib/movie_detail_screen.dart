@@ -92,6 +92,20 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                             Padding(
                               padding: const EdgeInsets.all(16.0),
                               child: Text(
+                                'Géneros: ${_movieDetails!['genres'].map((genre) => genre['name']).join(', ')}',
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Text(
+                                'Clasificación: ${_movieDetails!['adult'] ? 'Adulto' : 'Familiar'}',
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Text(
                                 _movieDetails!['overview'],
                                 textAlign: TextAlign.center,
                               ),
