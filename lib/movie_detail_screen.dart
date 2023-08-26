@@ -161,7 +161,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                                 maxLines: 2,
                               ),
                               Text(
-                                '(${actor['character']})',
+                                '${actor['character']}',
                                 textAlign: TextAlign.center,
                                 style:
                                     TextStyle(fontSize: 12, color: Colors.grey),
