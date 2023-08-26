@@ -43,6 +43,11 @@ class _MovieListState extends State<MovieList> {
       itemBuilder: (context, index) {
         final movie = _movies[index];
         return ListTile(
+          leading: Image.network(
+            'https://image.tmdb.org/t/p/w92/${movie['poster_path']}',
+            width: 40,
+            height: 60,
+          ),
           title: Text(movie['title']),
           onTap: () {
             Navigator.push(
