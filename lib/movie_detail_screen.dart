@@ -76,12 +76,27 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                   ),
                   SizedBox(height: 24),
                   _movieDetails != null
-                      ? Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Text(
-                            _movieDetails!['overview'],
-                            textAlign: TextAlign.center,
-                          ),
+                      ? Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Text(
+                                'Vote Average: ${_movieDetails!['vote_average']}',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Text(
+                                _movieDetails!['overview'],
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ],
                         )
                       : CircularProgressIndicator(),
                 ],
@@ -111,8 +126,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                             children: [
                               CircleAvatar(
                                 radius: 40,
-                                backgroundColor:
-                                    Colors.grey, // Color de fondo del avatar
+                                backgroundColor: Colors.grey,
                                 backgroundImage: actor['profile_path'] != null
                                     ? NetworkImage(
                                         'https://image.tmdb.org/t/p/w200/${actor['profile_path']}',
@@ -122,7 +136,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                                     ? Icon(
                                         Icons.person,
                                         size: 50,
-                                        color: Colors.white, // Color del icono
+                                        color: Colors.white,
                                       )
                                     : null,
                               ),
