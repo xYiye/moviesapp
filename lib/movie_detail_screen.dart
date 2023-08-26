@@ -81,7 +81,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                             Padding(
                               padding: const EdgeInsets.all(16.0),
                               child: Text(
-                                'Vote Average: ${_movieDetails!['vote_average']}',
+                                'Calificación: ${_movieDetails!['vote_average']}',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16,
@@ -159,6 +159,12 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                                 actor['name'],
                                 textAlign: TextAlign.center,
                                 maxLines: 2,
+                              ),
+                              Text(
+                                '(${actor['character']})',
+                                textAlign: TextAlign.center,
+                                style:
+                                    TextStyle(fontSize: 12, color: Colors.grey),
                               ),
                             ],
                           ),
